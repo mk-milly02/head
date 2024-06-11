@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"head"
 	"io"
@@ -9,13 +10,23 @@ import (
 )
 
 func main() {
-	filename := os.Args[1]
+	filename := flag.String("file", "", "with no FILE, read standard input.")
+	flag.Parse()
 
-	input := read_from_file(filename)
-	output := head.ReadFirstNLines(input, 0)
+	var input []byte
 
-	for _, line := range output {
-		fmt.Print(string(line))
+	if *filename == "" {
+		for i := 0; i < 10; i++ {
+			fmt.Scanln(&input)
+			fmt.Println(string(input))
+		}
+	} else {
+		input = read_from_file(*filename)
+		output := head.ReadFirstNLines(input, 0)
+
+		for _, line := range output {
+			fmt.Print(string(line))
+		}
 	}
 }
 

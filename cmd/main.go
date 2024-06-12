@@ -10,18 +10,17 @@ import (
 )
 
 func main() {
-	filename := flag.String("file", "", "with no FILE, read standard input.")
 	flag.Parse()
 
 	var input []byte
 
-	if *filename == "" {
+	if filename := flag.Arg(0); filename == "" {
 		for i := 0; i < 10; i++ {
 			fmt.Scanln(&input)
 			fmt.Println(string(input))
 		}
 	} else {
-		input = read_from_file(*filename)
+		input = read_from_file(filename)
 		output := head.ReadFirstNLines(input, 0)
 
 		for _, line := range output {

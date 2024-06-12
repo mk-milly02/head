@@ -17,7 +17,7 @@ func TestReadFirstNLines(t *testing.T) {
 		{
 			text: []byte("ping mpls pseudowire/r/nping vpls vsi"),
 			n:    0,
-			want: []string{"ping mpls pseudowire", "ping vpls vsi"},
+			want: []string{},
 		},
 		{
 			text: []byte("ping mpls pseudowire/r/nping vpls vsi"),

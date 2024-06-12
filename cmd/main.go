@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	n := flag.Int("n", 10, "print the first NUM lines instead of the first 10;")
 	flag.Parse()
 
 	var input []byte
@@ -21,7 +22,7 @@ func main() {
 		}
 	} else {
 		input = read_from_file(filename)
-		output := head.ReadFirstNLines(input, 0)
+		output := head.ReadFirstNLines(input, *n)
 
 		for _, line := range output {
 			fmt.Print(string(line))

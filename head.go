@@ -13,3 +13,9 @@ func ReadFirstNLines(text []byte, n int) (nlines []string) {
 	}
 	return nlines
 }
+
+func ReadFirstCBytes(text []byte, c int) (result string) {
+	reader := bytes.NewBuffer(text)
+	result = string(reader.Bytes()[0 : c])
+	return result
+}

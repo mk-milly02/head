@@ -11,6 +11,7 @@ import (
 
 func main() {
 	n := flag.Int("n", 10, "print the first NUM lines instead of the first 10;")
+	c := flag.Int("c", 0, "print the first NUM bytes of each file")
 	flag.Parse()
 
 	var input []byte
@@ -22,10 +23,14 @@ func main() {
 		}
 	} else {
 		input = read_from_file(filename)
-		output := head.ReadFirstNLines(input, *n)
-
-		for _, line := range output {
-			fmt.Print(string(line))
+		if *c != 0 {
+			output := head.ReadFirstCBytes(input, *c)
+			fmt.Print(output)
+		} else {
+			output := head.ReadFirstNLines(input, *n)
+			for _, line := range output {
+				fmt.Print(string(line))
+			}
 		}
 	}
 }

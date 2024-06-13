@@ -85,7 +85,7 @@ func TestReadFirstCBytes(t *testing.T) {
 			name: "hydrogen",
 			args: args{
 				text: []byte("Hello"),
-				c: 2,
+				c:    2,
 			},
 			wantResult: "He",
 		},
@@ -93,7 +93,7 @@ func TestReadFirstCBytes(t *testing.T) {
 			name: "helium",
 			args: args{
 				text: []byte("Hello, world!"),
-				c: 10,
+				c:    10,
 			},
 			wantResult: "Hello, wor",
 		},

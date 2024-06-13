@@ -1,6 +1,8 @@
 package head
 
-import "bytes"
+import (
+	"bytes"
+)
 
 func ReadFirstNLines(text []byte, n int) (nlines []string) {
 	reader := bytes.NewBuffer(text)
@@ -16,6 +18,6 @@ func ReadFirstNLines(text []byte, n int) (nlines []string) {
 
 func ReadFirstCBytes(text []byte, c int) (result string) {
 	reader := bytes.NewBuffer(text)
-	result = string(reader.Bytes()[0 : c])
+	result = string(reader.Bytes()[0:c])
 	return result
 }

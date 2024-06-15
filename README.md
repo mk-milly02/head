@@ -2,7 +2,7 @@
 
 > This is a lite version of the Unix tool `head`.
 >
-> The uniq utility reads the specified input_file comparing adjacent lines, writes a copy of each unique input line to the output_file. If input_file is a single dash ('-') or absent, the standard input is read. If output_file is absent, standard output is used for output. The second and succeeding copies of identical adjacent input lines are not written. Repeated lines in the input will not be detected if they are not adjacent, so it may be necessary to sort the files first.
+> Head is a command line tool that displays the first n lines or bytes of a file, where the user can provide the value for n. If no file or value for n is provided then it displays the first 10 lines from the standard input.
 
 `go run cmd/main.go`
 

@@ -32,7 +32,7 @@ func main() {
 				} else {
 					output := head.ReadFirstNLines(input, *n)
 					for _, line := range output {
-						fmt.Print(string(line))
+						fmt.Print(line)
 					}
 				}
 			}
@@ -44,7 +44,7 @@ func main() {
 			} else {
 				output := head.ReadFirstNLines(input, *n)
 				for _, line := range output {
-					fmt.Print(string(line))
+					fmt.Print(line)
 				}
 			}
 		}

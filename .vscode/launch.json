@@ -9,7 +9,8 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "./cmd/main.go"
+            "program": "./cmd/main.go",
+            "args": ["-c", "30", "../test2.txt"]
         }
     ]
 }

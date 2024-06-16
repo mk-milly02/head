@@ -1,4 +1,4 @@
-# uniq-tool
+# head
 
 > This is a lite version of the Unix tool `head`.
 >
